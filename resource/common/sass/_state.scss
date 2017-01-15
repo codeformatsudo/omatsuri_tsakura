@@ -1,0 +1,44 @@
+/*---------- @media -----------*/
+
+@media (max-width: 768px) {
+	.col-xs-11 {
+		width: 80%;
+	}
+	.col-xs-1 {
+		width: 20%;
+	}
+	section {
+		width: 100%;
+	}
+	.header.smaller {
+		height: 50px;
+	}
+	.header_siteTitle {
+		font-size: 1.0em;
+		padding: 10px 0;
+	}
+	.home_eventInfo ul {
+		margin-right: 0;
+	}
+	.home_eventInfo {
+		flex-direction: column;
+	}
+	#modal {
+		width: 80%;
+	}
+	.leaflet-right .leaflet-control {
+		margin-right: 0;
+	}
+	.leaflet-top .leaflet-control {
+		margin-top: 0;
+	}
+}
+
+@media (max-width: 960px) {
+	.table-large {
+		display: none;
+	}
+	.table-small {
+		display: table;
+	}
+}
