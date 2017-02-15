@@ -14,6 +14,7 @@ var cache = require('gulp-cached');
 var destDir = 'docs/'; // 出力用ディレクトリ
 var assetsDir = 'common/'; // 案件によってcommonとかassetsとかあるんでとりあえず変数にした
 
+
 gulp.task('browser-sync', function () {
 	browserSync({
 		server: {

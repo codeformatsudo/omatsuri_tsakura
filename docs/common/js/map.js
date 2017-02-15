@@ -41,17 +41,26 @@ $(function () {
   "fillOpacity": 0.8
  };
 
+	var ukairoStyle = {
+		"color": "#0971B2",
+		"weight": "5",
+		"fillOpacity": 1.0
+	}
 
  var paradeStyle = {
   "color": "#E8580C",
   "weight": "7",
   "fillOpacity": 1.0
  };
- /*
+
      L.geoJson(sakuradori, {
          style: streetStyle
      }).addTo(map);
- */
+
+	L.geoJson(ukairo, {
+		style: ukairoStyle
+	}).addTo(map);
+
 
 
  var lc = L.control.locate({
