@@ -69,15 +69,22 @@ $(function () {
   "fillOpacity": 1.0
  };
 
+	//text用polyline style
+	var polylineForTextStyle = {
+		"color": "#EE9D9E",
+  "fiilColor": "#EE9D9E",
+  "fillOpacity": 0.8
+	}
+
 	//会場のtext
 		function textOnEachFeature(feature, layer) {
    layer.setText(
 				feature.properties.name,
 				{
-
+					center: true,
 					offset: 20,
 					attributes: {
-						fill: '#EE9D9E',
+						fill: '#F15662',
 						'font-weight': 'bold',
 						'font-size': '14'
 					}
@@ -103,9 +110,14 @@ $(function () {
 
 //会場
     L.geoJson(sakuradori, {
-					onEachFeature: textOnEachFeature,
          style: streetStyle
      }).addTo(map);
+
+	//会場のtext用
+	L.geoJson(sakuradoriText, {
+		onEachFeature: textOnEachFeature,
+		style: polylineForTextStyle
+	}).addTo(map);
 
 	//迂回路
 	L.geoJson(ukairo, {

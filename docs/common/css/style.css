@@ -55,6 +55,11 @@ section div
     padding: 0 0 0 5px;
 }
 
+section #map div
+{
+    padding: 0 0 0 0;
+}
+
 .sectionTitle
 {
     overflow: hidden;
@@ -864,7 +869,7 @@ table.restables-clone {
 
 .is_red li.tab1 > a
 {
-    opacity: .6;
+    opacity: .3;
     background-color: #333;
 }
 
@@ -902,7 +907,7 @@ table.restables-clone {
 
 .is_pink li.tab1 > a
 {
-    opacity: .6;
+    opacity: .3;
     background-color: #4aa161;
 }
 
@@ -930,40 +935,40 @@ table.restables-clone {
 
 .is_pink2 .fixInfo
 {
-    background-color: #ffbfc2;
+    background-color: #f1727a;
 }
 
 .is_pink2 .home_eventDay
 {
-    color: #ffbfc2;
+    color: #f1727a;
 }
 
 .is_pink2 li.tab1 > a
 {
-    opacity: .6;
-    background-color: #ffbfc2;
+    opacity: .3;
+    background-color: #f1727a;
 }
 
 .is_pink2 li.tab1.active > a
 {
     opacity: 1;
-    background-color: #ffbfc2;
+    background-color: #f1727a;
 }
 
 .is_pink2 #tab1.active .table-small,
 .is_pink2 #tab1.active .table-large
 {
-    border-top: 4px solid #ffbfc2;
+    border-top: 4px solid #f1727a;
 }
 
 .is_pink2 #tab1 tr
 {
-    border-bottom: 1px solid #ffbfc2;
+    border-bottom: 1px solid #f1727a;
 }
 
 .is_pink2 #tab1 .table-small .eventTime
 {
-    background-color: #ffbfc2;
+    background-color: #f1727a;
 }
 
 .is_black .fixInfo
@@ -978,7 +983,7 @@ table.restables-clone {
 
 .is_black li.tab1 > a
 {
-    opacity: .6;
+    opacity: .3;
     background-color: #91200e;
 }
 
@@ -1016,7 +1021,7 @@ table.restables-clone {
 
 .is_yellow li.tab1 > a
 {
-    opacity: .6;
+    opacity: .3;
     background-color: #464c5c;
 }
 
