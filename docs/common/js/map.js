@@ -1,4 +1,5 @@
 $(function () {
+
  //mapSize
  function mapSize() {
   //  var w = $(window).width();
@@ -24,7 +25,6 @@ $(function () {
 
 
  //zoomSize
-
  var w = $(window).width();
  if (w <= 768) {
   zoomSize = 15;
@@ -32,9 +32,25 @@ $(function () {
   zoomSize = 16;
  };
 
+	//map set
  var map = L.map('map').setView([lat, lng], zoomSize);
 
+	//現在地
+	 var lc = L.control.locate({
+  layer: new L.LayerGroup(),
+  drawCircle: false,
+  keepCurrentZoomLevel: true,
+  icon: 'fa fa-map-marker',
+  follow: true,
+  showPopup: true,
+  strings: {
+   title: "現在地",
+   popup: "現在地",
+  }
+ }).addTo(map);
 
+
+//polyline style
  var streetStyle = {
   "color": "#EE9D9E",
   "fiilColor": "#EE9D9E",
@@ -53,40 +69,60 @@ $(function () {
   "fillOpacity": 1.0
  };
 
-     L.geoJson(sakuradori, {
+	//会場のtext
+		function textOnEachFeature(feature, layer) {
+   layer.setText(
+				feature.properties.name,
+				{
+
+					offset: 20,
+					attributes: {
+						fill: '#EE9D9E',
+						'font-weight': 'bold',
+						'font-size': '14'
+					}
+				}
+			);
+ };
+
+//迂回路のtext
+	function ukairoTextOnEachFeature(feature, layer) {
+   layer.setText(
+				feature.properties.name,
+				{
+					center: true,
+					offset: 20,
+					attributes: {
+						fill: '#0971B2',
+						'font-weight': 'bold',
+						'font-size': '14'
+					}
+				}
+			);
+ };
+
+//会場
+    L.geoJson(sakuradori, {
+					onEachFeature: textOnEachFeature,
          style: streetStyle
      }).addTo(map);
 
+	//迂回路
 	L.geoJson(ukairo, {
+		onEachFeature: ukairoTextOnEachFeature,
 		style: ukairoStyle
 	}).addTo(map);
 
 
-
- var lc = L.control.locate({
-  layer: new L.LayerGroup(),
-  drawCircle: false,
-  keepCurrentZoomLevel: true,
-
-  icon: 'fa fa-map-marker',
-  follow: true,
-  showPopup: true,
-  strings: {
-   title: "現在地",
-   popup: "現在地",
-
-  }
- }).addTo(map);
-
-
-
+//marker popup
  function onEachFeature(feature, layer) {
   if (feature.properties && feature.properties["popup"]) {
    layer.bindPopup(feature.properties["popup"]);
   }
  };
 
- function pointToLayer(feature, latlng) {
+	//marker
+ function markerPointToLayer(feature, latlng) {
   return L.marker(latlng, {
    icon: L.icon({
     iconUrl: feature.properties["icon"],
@@ -129,32 +165,32 @@ $(function () {
 */
  var tyuouLayer = L.geoJson(tyuou, {
   onEachFeature: onEachFeature,
-  pointToLayer: pointToLayer
+  pointToLayer: markerPointToLayer
  });
 
  var charityLayer = L.geoJson(charity, {
   onEachFeature: onEachFeature,
-  pointToLayer: pointToLayer
+  pointToLayer: markerPointToLayer
  });
 
  var ekimaeLayer = L.geoJson(ekimae, {
   onEachFeature: onEachFeature,
-  pointToLayer: pointToLayer
+  pointToLayer: markerPointToLayer
  });
 
  var tentomuraLayer = L.geoJson(tentomura, {
   onEachFeature: onEachFeature,
-  pointToLayer: pointToLayer
+  pointToLayer: markerPointToLayer
  });
 
  var wakuwakuLayer = L.geoJson(wakuwaku, {
   onEachFeature: onEachFeature,
-  pointToLayer: pointToLayer
+  pointToLayer: markerPointToLayer
  });
 
  var bloodDonationLayer = L.geoJson(bloodDonation, {
   onEachFeature: onEachFeature,
-  pointToLayer: pointToLayer
+  pointToLayer: markerPointToLayer
  });
 
  var paradeTyuoLayer = L.geoJson(paradeTyuo, {
@@ -172,29 +208,29 @@ $(function () {
 
  var honbuLayer = L.geoJson(honbu, {
   onEachFeature: onEachFeature,
-  pointToLayer: pointToLayer
+  pointToLayer: markerPointToLayer
  });
 
  var tent3Layer = L.geoJson(tent3, {
   onEachFeature: onEachFeature,
-  pointToLayer: pointToLayer
+  pointToLayer: markerPointToLayer
  });
  var tent4Layer = L.geoJson(tent4, {
   onEachFeature: onEachFeature,
-  pointToLayer: pointToLayer
+  pointToLayer: markerPointToLayer
  });
  var tent5Layer = L.geoJson(tent5, {
   onEachFeature: onEachFeature,
-  pointToLayer: pointToLayer
+  pointToLayer: markerPointToLayer
  });
  var shelterLayer = L.geoJson(shelter, {
   onEachFeature: onEachFeature,
-  pointToLayer: pointToLayer
+  pointToLayer: markerPointToLayer
  });
 
  var toiletLayer = L.geoJson(toilet, {
   onEachFeature: onEachFeature,
-  pointToLayer: pointToLayer
+  pointToLayer: markerPointToLayer
  }).addTo(map);
 
 
