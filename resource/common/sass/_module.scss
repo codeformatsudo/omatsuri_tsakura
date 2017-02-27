@@ -35,15 +35,6 @@ section #map div {
 		left: 100%;
 		margin-left: 15px;
 	}
-	span:before,
-	span:after {
-		content: "";
-		position: absolute;
-		top: 0;
-		height: 23px;
-		border-bottom: 1px solid #27282e;
-		width: 600px;
-	}
 }
 
 .section_content {

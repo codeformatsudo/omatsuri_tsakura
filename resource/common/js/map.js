@@ -2,7 +2,7 @@ $(function () {
 
  //mapSize
  function mapSize() {
-  //  var w = $(window).width();
+    var w = $(window).width();
   var h = $(window).height();
   //  var mapWidth = w - 40;
   var mapHeight = h - 20 - $("header").outerHeight() - $("nav").outerHeight() - $("footer").outerHeight();
@@ -11,16 +11,28 @@ $(function () {
    "width": mapWidth + "px"
   });
   */
-  $("#map").css({
+		if( w > 768) {
+			$("#map").css({
    "height": mapHeight + "px"
   });
- };
+		} else {
+			if( w > h) {
+				$("#map").css({
+   "height": 300 + "px"
+		});
+			} else {
+				$("#map").css({
+   "height": 400 + "px"
+		});
+			}
+ }
+	}
 
  mapSize();
  $(window).resize(mapSize);
 
- var lat = "35.800550";
- var lng = "139.951673";
+ var lat = "35.800567";
+ var lng = "139.955321";
  var zoomSize = '';
 
 
@@ -82,7 +94,7 @@ $(function () {
 				feature.properties.name,
 				{
 					center: true,
-					offset: 20,
+					offset: 16,
 					attributes: {
 						fill: '#F15662',
 						'font-weight': 'bold',
@@ -98,7 +110,7 @@ $(function () {
 				feature.properties.name,
 				{
 					center: true,
-					offset: 20,
+					offset: 16,
 					attributes: {
 						fill: '#0971B2',
 						'font-weight': 'bold',

@@ -89,7 +89,9 @@
 	<div id="wrap">
 
 		<!--fixInfo-->
-		<div class="fixInfo"></div>
+		<div class="fixInfo">
+			<?php require_once("php/twitter.php"); ?>
+		</div>
 
 		<!--header-->
 		<header id="header" class="header">
@@ -124,6 +126,8 @@
 				<h1 class="sectionTitle"><span>会場</span></h1>
 			</section>
 		</article>
+
+		<section class="caution" id="caution"></section>
 
 		<!--map-->
 		<article class="map">

@@ -10,6 +10,17 @@ $color in $colors {
 		.header_siteTitle {
 			background-color: $color;
 		}
+		.sectionTitle {
+		span:before,
+	span:after {
+		content: "";
+		position: absolute;
+		top: 0;
+		height: 23px;
+		border-bottom: 1px solid $color;
+		width: 600px;
+	}
+		}
 		/*
   #modal {
    background-color: $color;

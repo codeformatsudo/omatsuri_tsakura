@@ -93,19 +93,6 @@ section #map div
 
     margin-left: 15px;
 }
-.sectionTitle span:before,
-.sectionTitle span:after
-{
-    position: absolute;
-    top: 0;
-
-    width: 600px; 
-    height: 23px;
-
-    content: '';
-
-    border-bottom: 1px solid #27282e;
-}
 
 .section_content
 {
@@ -483,69 +470,6 @@ footer
 }
 
 */
-/*---------- @media -----------*/
-@media (max-width: 768px)
-{
-    .col-xs-11
-    {
-        width: 80%;
-    }
-    .col-xs-1
-    {
-        width: 20%;
-    }
-    section
-    {
-        width: 100%;
-    }
-    .header.smaller
-    {
-        height: 50px;
-    }
-    .header_siteTitle
-    {
-        font-size: 1.0em;
-
-        padding: 10px 0;
-    }
-    .home_eventInfo ul
-    {
-        margin-right: 0;
-    }
-    .home_eventInfo
-    {
-            flex-direction: column; 
-
-        -webkit-box-orient: vertical;
-        -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-    }
-    #modal
-    {
-        width: 80%;
-    }
-    .leaflet-right .leaflet-control
-    {
-        margin-right: 0;
-    }
-    .leaflet-top .leaflet-control
-    {
-        margin-top: 0;
-    }
-}
-
-@media (max-width: 960px)
-{
-    .table-large
-    {
-        display: none;
-    }
-    .table-small
-    {
-        display: table;
-    }
-}
-
 /*---------- custum -----------*/
 section.ac-container
 {
@@ -637,6 +561,77 @@ table.restables-clone {
 		display: table;
 	}
 */
+/*---------- @media -----------*/
+@media (max-width: 768px)
+{
+    .col-xs-11
+    {
+        width: 80%;
+    }
+    .col-xs-1
+    {
+        width: 20%;
+    }
+    section
+    {
+        width: 100%;
+    }
+    .header.smaller
+    {
+        height: 50px;
+    }
+    .header_siteTitle
+    {
+        font-size: 1.0em;
+
+        padding: 10px 0;
+    }
+    .home_eventInfo ul
+    {
+        margin-right: 0;
+    }
+    .home_eventInfo
+    {
+            flex-direction: column;
+
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+    }
+    #modal
+    {
+        width: 80%;
+    }
+    .leaflet-right .leaflet-control
+    {
+        margin-right: 0;
+    }
+    .leaflet-top .leaflet-control
+    {
+        margin-top: 0;
+    }
+    .menu-item-checkbox
+    {
+        font-size: .6em;
+    }
+    .ac-container label
+    {
+        font-size: .8em;
+    }
+}
+
+@media (max-width: 960px)
+{
+    .table-large
+    {
+        display: none;
+    }
+    .table-small
+    {
+        display: table;
+    }
+}
+
 .is_red
 {
     /*
@@ -652,6 +647,19 @@ table.restables-clone {
 .is_red .header_siteTitle
 {
     background-color: #be1e3c;
+}
+.is_red .sectionTitle span:before,
+.is_red .sectionTitle span:after
+{
+    position: absolute;
+    top: 0;
+
+    width: 600px;
+    height: 23px;
+
+    content: '';
+
+    border-bottom: 1px solid #be1e3c;
 }
 .is_red li.tab2 > a
 {
@@ -697,6 +705,19 @@ table.restables-clone {
 {
     background-color: #ee9ca1;
 }
+.is_pink .sectionTitle span:before,
+.is_pink .sectionTitle span:after
+{
+    position: absolute;
+    top: 0;
+
+    width: 600px;
+    height: 23px;
+
+    content: '';
+
+    border-bottom: 1px solid #ee9ca1;
+}
 .is_pink li.tab2 > a
 {
     opacity: .6; 
@@ -740,6 +761,19 @@ table.restables-clone {
 .is_pink2 .header_siteTitle
 {
     background-color: #ee9ca1;
+}
+.is_pink2 .sectionTitle span:before,
+.is_pink2 .sectionTitle span:after
+{
+    position: absolute;
+    top: 0;
+
+    width: 600px;
+    height: 23px;
+
+    content: '';
+
+    border-bottom: 1px solid #ee9ca1;
 }
 .is_pink2 li.tab2 > a
 {
@@ -785,6 +819,19 @@ table.restables-clone {
 {
     background-color: #000;
 }
+.is_black .sectionTitle span:before,
+.is_black .sectionTitle span:after
+{
+    position: absolute;
+    top: 0;
+
+    width: 600px;
+    height: 23px;
+
+    content: '';
+
+    border-bottom: 1px solid #000;
+}
 .is_black li.tab2 > a
 {
     opacity: .6; 
@@ -828,6 +875,19 @@ table.restables-clone {
 .is_yellow .header_siteTitle
 {
     background-color: #ffb60a;
+}
+.is_yellow .sectionTitle span:before,
+.is_yellow .sectionTitle span:after
+{
+    position: absolute;
+    top: 0;
+
+    width: 600px;
+    height: 23px;
+
+    content: '';
+
+    border-bottom: 1px solid #ffb60a;
 }
 .is_yellow li.tab2 > a
 {

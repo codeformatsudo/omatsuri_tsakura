@@ -3,8 +3,12 @@
 
 	/*-----注意案内の作成-----*/
 	//注意文の読み込み
-	$.ajax({
+	/*
+	function loadInfoContents() {
+		$.ajax({
 		url: 'common/data/info.txt',
+		type: 'GET',
+		dataType: 'text',
 		timeout: 1000,
 		success: function (data) {
 			if (data.length === 0) {
@@ -20,7 +24,11 @@
 			alert("「お知らせ」の取得に失敗しました。再度読み込んでください。");
 		}
 	});
+	}
 
+	loadInfoContents();
+	setInterval("loadInfoContents()", 5000);
+		*/
 	$(window).on('load resize orientationchange', function () {
 		fixInfo();
 	});
@@ -29,24 +37,25 @@
 		scrollInfo();
 	});
 
-	var firstH = 300;
-	var fixH = 70;
+	var firstH = 200;
+	var fixH = 60;
 	var fixContent = document.querySelector('.fixInfo');
 	var windowH = window.innerHeight || document.documentElement.clientHeight;
 	var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
 	fixContent.style.height = firstH + 'px';
-	fixContent.style.top = windowH - firstH + 'px';
+	fixContent.style.top = windowH - firstH + 50 + 'px';
 	document.querySelector('body').style.paddingBottom = fixH + 'px';
 
 	function fixInfo() {
 		$('.fixInfo').animate({
-			height: fixH,
+			height: firstH,
 			top: windowH + scrollTop - fixH + 'px'
-		}, 5000, 'easeInQuart');
+		}, 3000, 'easeInQuart');
 	}
 
 	function scrollInfo() {
 		fixContent.style.top = windowH + scrollTop - fixH + 'px';
+
 	}
 
 	/*-----ツイートの取得-----*/
@@ -273,16 +282,15 @@
 	csvToArray('common/data/caution.csv', function (data) {
 			var dataLen = data.length;
 			if (dataLen - 1 > 0) {
-				var cautionArea = document.createElement('section');
-				cautionArea.id = 'caution';
-				document.querySelector('.home').appendChild(cautionArea);
+				var cautionArea = document.querySelector('.caution');
 				var h1Area = document.createElement('h1');
-				var span = document.createElement('span');
-				span.innerHTML = "ご注意";
-				h1Area.appendChild(span);
 				h1Area.classList.add('home-caution');
 				h1Area.classList.add('sectionTitle');
 				cautionArea.appendChild(h1Area);
+				var cautionSpan = document.createElement('span');
+				cautionSpan.innerHTML = "ご注意";
+				h1Area.appendChild(cautionSpan);
+
 				var cautionUl = document.createElement('ul');
 				cautionArea.appendChild(cautionUl);
 				var i = 1;
