@@ -5,7 +5,7 @@ require_once("twitteroauth-master/autoload.php");
 use Abraham\TwitterOAuth\TwitterOAuth;
 
 //設定
-$keyword = "#Mステ AND #XJAPAN -RT ";//検索キーワード　「http」をAND検索するとより確実なように思う
+$keyword = "#常盤平さくらまつり実行委員会 AND #お知らせ";//検索キーワード　「http」をAND検索するとより確実なように思う
 $consumerKey = "5YIrA27Ni7cgIYDIpbMW8nxgv";
 $consumerSecret = "eWHDHYWyPcPh8d34uLaW5Bl8i788GrMN3CIevdrJRqrPwHJzaS";
 $accessToken = "735349674056527872-GQZ4ouNlxAXJ3v0BqOr0GKzVeAwPBfn";
@@ -28,10 +28,13 @@ $string = $connection->OAuthRequest(
 		$obj = json_decode($string);
 
 		foreach ($obj->statuses as $result) {
-		  echo "【".$result->user->screen_name . "】 " . $result->text . "<br />";
+			$str = $result->text;
+			$replace = str_replace('#常盤平さくらまつり実行委員会', '', $str);
+			$replace = str_replace('#お知らせ', '', $replace);
+		  echo $replace . "<br />";
 		}
 	} else {
-		echo "現在、迷子の情報はありません。";
+		echo "現在、お知らせはありません。";
 	}
 
 ?>

@@ -379,6 +379,7 @@
 	});
 
 	//イベントの日時
+	/*
 	csvToArray('common/data/date.csv', function (data) {
 		var dataLen = data.length;
 		var i = 1; //1行目を除く
@@ -404,7 +405,7 @@
 				ul.appendChild(li);
 			}
 		}
-		/*
+
 		for (i; i < dataLen; i++) {
 		 var divRow = document.createElement('div');
 		 divRow.classList.add('row');
@@ -424,9 +425,12 @@
 		  divRow.appendChild(divTime);
 		 }
 		}
-		*/
+
 	});
+	*/
+
 	// 基本色、サイトタイトル、サイトの説明、メイン画像を設定
+	/*
 	csvToArray('common/data/info.csv', function (data) {
 		//bodyに色のクラスを設定
 		var colorData = data[1][0];
@@ -477,7 +481,7 @@
 			document.querySelector('.home_date').appendChild(caution);
 		}
 	});
-
+*/
 	//CSVを配列にする
 	function csvToArray(filename, cb) {
 		$.get(filename, function (csvdata, status) {

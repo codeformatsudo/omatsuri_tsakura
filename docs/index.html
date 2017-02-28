@@ -1,36 +1,38 @@
+#! /usr/local/bin/php-cgi
 <!DOCTYPE html>
 <html lang="ja">
 
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0">
+	<meta name="description" content="常盤平さくらまつりの公式サイトです。">
 	<meta property="og:title" content="常盤平さくらまつり" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="http://code4matsudo/t-sakuramatsuri" />
-    <meta property="og:image" content="http://code4matsudo/t-sakuramatsuri/img/ogp.png" />
+    <meta property="og:image" content="http://code4matsudo/t-sakuramatsuri/common/img/ogp.png" />
     <meta property="og:site_name" content="常盤平さくらまつり" />
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@Codeformatsudo">
     <meta name="twitter:creator" content="@Codeformatsudo">
-    <meta name="twitter:image" content="http://code4matsudo.org/t-sakuramatsuri/img/twitter_cards.png">
+    <meta name="twitter:image" content="http://code4matsudo.org/t-sakuramatsuri/common/img/twitter_cards.png">
     <meta name="twitter:domain" content="code4matsudo.org/t-sakuramatsuri/">
-    <link rel="apple-touch-icon" sizes="57x57" href="img/favicons/apple-touch-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="img/favicons/apple-touch-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="img/favicons/apple-touch-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="img/favicons/apple-touch-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="img/favicons/apple-touch-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="img/favicons/apple-touch-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="img/favicons/apple-touch-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="img/favicons/apple-touch-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="img/favicons/apple-touch-icon-180x180.png">
-    <link rel="icon" type="image/png" href="img/favicons/favicon-32x32.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="img/favicons/android-chrome-192x192.png" sizes="192x192">
-    <link rel="icon" type="image/png" href="img/favicons/favicon-96x96.png" sizes="96x96">
-    <link rel="icon" type="image/png" href="img/favicons/favicon-16x16.png" sizes="16x16">
-    <link rel="manifest" href="img/favicons/manifest.json">
-    <link rel="mask-icon" href="/img/favicons/safari-pinned-tab.svg" color="#eb7680">
+    <link rel="apple-touch-icon" sizes="57x57" href="common/img/favicons/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="common/img/favicons/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="common/img/favicons/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="common/img/favicons/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="common/img/favicons/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="common/img/favicons/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="common/img/favicons/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="common/img/favicons/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="common/img/favicons/apple-touch-icon-180x180.png">
+    <link rel="icon" type="image/png" href="common/img/favicons/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="common/img/favicons/android-chrome-192x192.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="common/img/favicons/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="common/img/favicons/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="common/img/favicons/manifest.json">
+    <link rel="mask-icon" href="common/img/favicons/safari-pinned-tab.svg" color="#eb7680">
     <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="msapplication-TileImage" content="img/favicons/mstile-144x144.png">
+    <meta name="msapplication-TileImage" content="common/img/favicons/mstile-144x144.png">
     <meta name="theme-color" content="#ffffff">
 	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -40,7 +42,8 @@
 	<link rel="stylesheet" href="common/css/hamburgers.min.css">
 	<link rel="stylesheet" href="common/css/for_sns.css">
 	<link rel="stylesheet" href="common/css/style.css">
-	<title></title>
+	<title>第46回　常盤平さくらまつり</title>
+
 	<script>
         (function (i, s, o, g, r, a, m) {
             i['GoogleAnalyticsObject'] = r;
@@ -66,7 +69,7 @@
     </script>
 </head>
 
-<body>
+<body class="is_pink2">
 <script>
         window.fbAsyncInit = function () {
             FB.init({
@@ -89,13 +92,15 @@
 	<div id="wrap">
 
 		<!--fixInfo-->
-		<div class="fixInfo"></div>
+		<div class="fixInfo">
+			<?php require_once("common/php/twitter.php"); ?>
+		</div>
 
 		<!--header-->
 		<header id="header" class="header">
 			<div class="row">
 				<div class="col-xs-11">
-					<h1 class="header_siteTitle"></h1>
+					<h1 class="header_siteTitle"><a href="index.html">第46回　常盤平さくらまつり</a></h1>
 				</div>
 				<div class="col-xs-1">
 					<button id="my-icon" class="hamburger hamburger--collapse" type="button">
@@ -109,15 +114,34 @@
 
 		<!--sideMenu-->
 		<nav id="sideMenu">
-
 		</nav>
 
 		<!--main-img-->
-		<article class="mainImg"></article>
+		<article class="mainImg">
+			<img src="common/img/main.jpg" class="mainImg_img">
+		</article>
 
 		<!--home-->
 		<article class="home">
 			<section class="home_date" id="home_date">
+			<div class="home_eventInfo">
+				<ul>
+					<li class="home_eventDay">2017/4/1(土）</li>
+					<li class="home_eventTime">歩行者天国: 11:00-19:00</li>
+					<li class="home_eventTime">道路沿い屋台: 11:00-18:00</li>
+					<li class="home_eventTime">交通規制: 10:30-19:00</li>
+				</ul>
+				<ul>
+					<li class="home_eventDay">2017/4/2(日）</li>
+					<li class="home_eventTime">歩行者天国: 10:00-18:00</li>
+					<li class="home_eventTime">道路沿い屋台: 10:00-17:00</li>
+					<li class="home_eventTime">交通規制: 9:30-18:00</li>
+				</ul>
+			</div>
+			<div class="home_eventTime_caution">
+				※雨天決行、イベントや出店は天候等により中止の場合があります<br>
+※歩行者天国終了時、さくら通りは大変混雑しますので、駅に向かう方は迂回路（地図のブルーの道）をご利用ください
+			</div>
 			</section>
 
 			<section class="home_place" id="place">
@@ -231,5 +255,4 @@
 	<script src="common/js/link_to_checkbox.min.js"></script>
 
 </body>
-
 </html>

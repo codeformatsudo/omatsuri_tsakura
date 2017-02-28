@@ -120,6 +120,12 @@ section #map div
 
     color: #fff;
 }
+.header_siteTitle a
+{
+    text-decoration: none;
+
+    color: #fff;
+}
 .header.smaller
 {
     height: 60px;
@@ -526,6 +532,8 @@ section.ac-container
 
 .hamburger
 {
+    padding: 10px;
+
     outline: none;
 }
 
