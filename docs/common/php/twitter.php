@@ -5,7 +5,7 @@ require_once("twitteroauth-master/autoload.php");
 use Abraham\TwitterOAuth\TwitterOAuth;
 
 //設定
-$keyword = "#常盤平さくらまつり実行委員会 AND #お知らせ";//検索キーワード　「http」をAND検索するとより確実なように思う
+$keyword = "ハッシュタグ1 AND ハッシュタグ2";//検索キーワード　「http」をAND検索するとより確実なように思う
 $consumerKey = "";
 $consumerSecret = "";
 $accessToken = "";
@@ -29,8 +29,8 @@ $string = $connection->OAuthRequest(
 
 		foreach ($obj->statuses as $result) {
 			$str = $result->text;
-			$replace = str_replace('#常盤平さくらまつり実行委員会', '', $str);
-			$replace = str_replace('#お知らせ', '', $replace);
+			$replace = str_replace('ハッシュタグ1', '', $str);
+			$replace = str_replace('ハッシュタグ2', '', $replace);
 		  echo $replace . "<br />";
 		}
 	} else {
