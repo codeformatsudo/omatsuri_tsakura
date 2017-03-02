@@ -1,2 +1,6 @@
 AddHandler cgi-script .html
 
+RewriteEngine on
+RewriteBase /
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://code4matsudo.org/t-sakuramatsuri/$1 [R=301,L]

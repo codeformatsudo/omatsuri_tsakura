@@ -6,10 +6,10 @@ use Abraham\TwitterOAuth\TwitterOAuth;
 
 //設定
 $keyword = "#常盤平さくらまつり実行委員会 AND #お知らせ";//検索キーワード　「http」をAND検索するとより確実なように思う
-$consumerKey = "5YIrA27Ni7cgIYDIpbMW8nxgv";
-$consumerSecret = "eWHDHYWyPcPh8d34uLaW5Bl8i788GrMN3CIevdrJRqrPwHJzaS";
-$accessToken = "735349674056527872-GQZ4ouNlxAXJ3v0BqOr0GKzVeAwPBfn";
-$accessTokenSecret = "ztpZkxEYupaFqKwhm95Hqjwz0iAi0NacYGO8nnkLFQMHt";
+$consumerKey = "";
+$consumerSecret = "";
+$accessToken = "";
+$accessTokenSecret = "";
 
 $connection = new TwitterOAuth($consumerKey, $consumerSecret, $accessToken, $accessTokenSecret);
 
